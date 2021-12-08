@@ -29,13 +29,13 @@ public class DonationDatabaseAccessService implements DonationDAO {
     }
 
     @Override
-    public Optional<Donation> selectDonationById(Integer id) {
+    public Optional<Donation> selectDonationByUser(User user) {
         String sql = """
                 SELECT *
                 FROM donations
-                WHERE id = ?;
+                WHERE user_id = ?;
                 """;
-        return jdbcTemplate.query(sql, new DonationRowMapper(), id)
+        return jdbcTemplate.query(sql, new DonationRowMapper(), user.getId())
                 .stream()
                 .findFirst();
     }

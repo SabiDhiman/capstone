@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface DonationDAO {
     List<Donation> selectAllDonations();
 
-    Optional<Donation> selectDonationById(Integer id);
+    Optional<Donation> selectDonationByUser(User user);
 
     int AddDonation(Donation donation);
 
