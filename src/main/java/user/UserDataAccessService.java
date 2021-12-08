@@ -1,8 +1,12 @@
 package user;
 
-import org.flywaydb.core.internal.jdbc.JdbcTemplate;
+
 import org.flywaydb.core.internal.jdbc.RowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import request.Request;
+import request.RequestRowMapper;
+
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,40 +21,66 @@ public class UserDataAccessService implements UserDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    RowMapper rowMapper = new RowMapper() {
-            @Override
-            public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
-                User user = new User(
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("email"));
-                return user;
-            }
-    };
-
 
     @Override
     public List<User> selectAllUsers() {
-        return null;
+        String sql = """
+                SELECT *
+                FROM users;
+                """;
+
+        return jdbcTemplate.query(sql, new UserRowMapper());
+
     }
 
     @Override
     public Optional<User> selectUserById(Integer id) {
-        return Optional.empty();
+
+        String sql = """
+                SELECT *
+                FROM users
+                WHERE id = ?;
+                """;
+        return jdbcTemplate.query(sql, new UserRowMapper(), id)
+                .stream()
+                .findFirst();
     }
 
     @Override
-    public int AddUser(User user) {
-        return 0;
+    public int addUser(User user) {
+        String sql = """
+                INSERT INTO users (name, email)
+                VALUES (?, ?, ?);
+                """;
+        return jdbcTemplate.update(
+                sql,
+                user.getName(),
+                user.getEmail());
+
     }
 
     @Override
     public int deleteUser(int id) {
-        return 0;
+
+        String sql = """
+                DELETE FROM users
+                WHERE id = ?;
+                """;
+        return jdbcTemplate.update(sql, id);
     }
 
-    @Override
+    @Override//y
     public int updateUser(Integer id, User user) {
-        return 0;
+        String sql = """
+                UPDATE users
+                SET post_id = ?, donationType = ?, quantity_needed = ?
+                WHERE id = ?;
+                """;
+        return jdbcTemplate.update(
+                sql,
+                user.getName(),
+                user.getEmail());
+
+
     }
 }

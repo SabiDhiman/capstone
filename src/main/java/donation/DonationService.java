@@ -2,6 +2,7 @@ package donation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import user.User;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,11 +20,11 @@ public class DonationService {
         return donationDAO.selectAllDonations();
     }
 
-    public Optional<Donation> getDonationById(int id) throws Exception {
-        if (donationDAO.selectDonationById(id).isEmpty()){
-            throw new Exception("Donation with the id " + id + " not found");
+    public Optional<Donation> getDonationByUser(User user) throws Exception {
+        if (donationDAO.selectDonationByUser(user).isEmpty()){
+            throw new Exception("Donation from user: " + user + " not found");
         }
-        return donationDAO.selectDonationById(id);
+        return donationDAO.selectDonationByUser(user);
     }
 
     public void createDonation(Donation donation) {

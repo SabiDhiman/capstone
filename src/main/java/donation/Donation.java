@@ -8,7 +8,7 @@ public class Donation {
     private Integer donation_quantity;
     private Integer request_id;
 
-    public Donation(Integer id, Integer user_id, Integer donation_quantity, Integer request_id, String requestId) {
+    public Donation(Integer id, Integer user_id, Integer donation_quantity, Integer request_id) {
         this.id = id;
         this.user_id = user_id;
         this.donation_quantity = donation_quantity;

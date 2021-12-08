@@ -9,8 +9,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-
-
     private UserService userService;
 
     @Autowired

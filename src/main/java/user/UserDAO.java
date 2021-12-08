@@ -12,7 +12,7 @@ public interface UserDAO {
 
         Optional<User> selectUserById(Integer id);
 
-        int AddUser(User user);
+        int addUser(User user);
 
         int deleteUser(int id);
 

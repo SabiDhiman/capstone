@@ -1,6 +1,7 @@
 package post;
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -55,4 +56,5 @@ public class PostDataAccessService implements PostDAO {
         return jdbcTemplate.query(sql, autowiredRowmapper);
     }
 }
+
 

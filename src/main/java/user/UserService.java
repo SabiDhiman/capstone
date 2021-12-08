@@ -1,7 +1,9 @@
 package user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import request.RequestDAO;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,9 +12,9 @@ import java.util.Optional;
 public class UserService {
     private UserDAO userDAO;
 
-    @Autowired
-    public UserService(UserDAO userDAO) {
+    public UserService(@Qualifier("postgresUsers") UserDAO userDAO){
         this.userDAO = userDAO;
+
     }
 
     public List<User> getAllUsers() {
@@ -27,6 +29,6 @@ public class UserService {
     }
 
     public void createUser(User user) {
-        userDAO.AddUser(user);
+        userDAO.addUser(user);
     }
 }
