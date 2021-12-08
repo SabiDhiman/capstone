@@ -1,10 +1,12 @@
 package user;
 
+
 import org.flywaydb.core.internal.jdbc.RowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import request.Request;
 import request.RequestRowMapper;
+
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,6 +21,7 @@ public class UserDataAccessService implements UserDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+
     @Override
     public List<User> selectAllUsers() {
         String sql = """
@@ -27,10 +30,12 @@ public class UserDataAccessService implements UserDAO {
                 """;
 
         return jdbcTemplate.query(sql, new UserRowMapper());
+
     }
 
     @Override
     public Optional<User> selectUserById(Integer id) {
+
         String sql = """
                 SELECT *
                 FROM users
@@ -51,10 +56,12 @@ public class UserDataAccessService implements UserDAO {
                 sql,
                 user.getName(),
                 user.getEmail());
+
     }
 
     @Override
     public int deleteUser(int id) {
+
         String sql = """
                 DELETE FROM users
                 WHERE id = ?;
@@ -73,5 +80,7 @@ public class UserDataAccessService implements UserDAO {
                 sql,
                 user.getName(),
                 user.getEmail());
+
+
     }
 }

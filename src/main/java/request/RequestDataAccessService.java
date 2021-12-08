@@ -1,6 +1,7 @@
 package request;
 
 
+
 import org.flywaydb.core.internal.jdbc.RowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -75,4 +76,5 @@ public class RequestDataAccessService implements RequestDAO{
                 request.getDonationType(),
                 request.getQuantity_needed());
     }
+
 }
