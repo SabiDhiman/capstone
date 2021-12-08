@@ -12,10 +12,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class UserDatabaseAccessService implements UserDAO {
+public class UserDataAccessService implements UserDAO {
     private JdbcTemplate jdbcTemplate;
 
-    public UserDatabaseAccessService(JdbcTemplate jdbcTemplate) {
+    public UserDataAccessService(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

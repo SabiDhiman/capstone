@@ -12,11 +12,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class RequestDatabaseAccessService implements RequestDAO{
+public class RequestDataAccessService implements RequestDAO{
 
     private JdbcTemplate jdbcTemplate;
 
-    public RequestDatabaseAccessService(JdbcTemplate jdbcTemplate) {this.jdbcTemplate = jdbcTemplate;}
+    public RequestDataAccessService(JdbcTemplate jdbcTemplate) {this.jdbcTemplate = jdbcTemplate;}
 
     @Override
     public List<Request> selectAllRequests() {

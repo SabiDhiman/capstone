@@ -13,10 +13,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class DonationDatabaseAccessService implements DonationDAO {
+public class DonationDataAccessService implements DonationDAO {
     private org.springframework.jdbc.core.JdbcTemplate jdbcTemplate;
 
-    public DonationDatabaseAccessService(JdbcTemplate jdbcTemplate) {this.jdbcTemplate = jdbcTemplate;}
+    public DonationDataAccessService(JdbcTemplate jdbcTemplate) {this.jdbcTemplate = jdbcTemplate;}
 
     @Override
     public List<Donation> selectAllDonations() {

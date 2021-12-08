@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class HubDatabaseAccessService implements HubDAO {
+public class HubDataAccessService implements HubDAO {
     private JdbcTemplate jdbcTemplate;
 
-    public HubDatabaseAccessService(JdbcTemplate jdbcTemplate) {this.jdbcTemplate = jdbcTemplate;}
+    public HubDataAccessService(JdbcTemplate jdbcTemplate) {this.jdbcTemplate = jdbcTemplate;}
 
     @Override
     public List<Hub> selectAllHubs() {
