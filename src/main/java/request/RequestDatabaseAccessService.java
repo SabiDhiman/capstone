@@ -13,8 +13,6 @@ import java.util.Optional;
 
 @Repository
 public class RequestDatabaseAccessService implements RequestDAO{
-//    @Autowired
-//    RequestRowMapper autowiredRowMapper;
 
     private JdbcTemplate jdbcTemplate;
 
