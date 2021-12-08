@@ -9,10 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Repository
-public class DonationDatabaseAccessService {
+public class DonationDataAccessService {
     private JdbcTemplate jdbcTemplate;
 
-    public DonationDatabaseAccessService(JdbcTemplate jdbcTemplate) {
+    public DonationDataAccessService(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
