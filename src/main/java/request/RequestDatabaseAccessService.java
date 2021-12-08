@@ -1,7 +1,9 @@
 package request;
 
-import org.flywaydb.core.internal.jdbc.JdbcTemplate;
+
 import org.flywaydb.core.internal.jdbc.RowMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
@@ -11,21 +13,12 @@ import java.util.Optional;
 
 @Repository
 public class RequestDatabaseAccessService implements RequestDAO{
+//    @Autowired
+//    RequestRowMapper autowiredRowMapper;
+
     private JdbcTemplate jdbcTemplate;
 
-    public RequestDatabaseAccessService(JdbcTemplate jdbcTemplate){this.jdbcTemplate = jdbcTemplate;}
-
-    RowMapper rowMapper = new RowMapper() {
-        @Override
-        public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
-            Request request = new Request(
-                    rs.getInt("id"),
-                    rs.getInt("post_id"),
-                    rs.getString("donationType"),
-                    rs.getInt("quantity_needed"));
-            return request;
-        }
-    };
+    public RequestDatabaseAccessService(JdbcTemplate jdbcTemplate) {this.jdbcTemplate = jdbcTemplate;}
 
     @Override
     public List<Request> selectAllRequests() {
@@ -34,7 +27,7 @@ public class RequestDatabaseAccessService implements RequestDAO{
                 FROM requests;
                 """;
 
-        return jdbcTemplate.query(sql, rowMapper);
+        return jdbcTemplate.query(sql, new RequestRowMapper());
     }
 
     @Override
@@ -44,7 +37,7 @@ public class RequestDatabaseAccessService implements RequestDAO{
                 FROM requests
                 WHERE id = ?;
                 """;
-        return jdbcTemplate.query(sql, rowMapper, id)
+        return jdbcTemplate.query(sql, new RequestRowMapper(), id)
                 .stream()
                 .findFirst();
     }
@@ -62,7 +55,7 @@ public class RequestDatabaseAccessService implements RequestDAO{
                 request.getQuantity_needed());
     }
 
-    @Override
+    @Override//y
     public int deleteRequest(int id) {
         String sql = """
                 DELETE FROM requests
@@ -71,7 +64,7 @@ public class RequestDatabaseAccessService implements RequestDAO{
         return jdbcTemplate.update(sql, id);
     }
 
-    @Override
+    @Override//y
     public int updateRequest(Integer id, Request request) {
         String sql = """
                 UPDATE requests
@@ -80,9 +73,8 @@ public class RequestDatabaseAccessService implements RequestDAO{
                 """;
         return jdbcTemplate.update(
                 sql,
-                request.getQuantity_needed(),
+                request.getId(),
                 request.getDonationType(),
-                request.getQuantity_needed(),
-                id);
+                request.getQuantity_needed());
     }
 }

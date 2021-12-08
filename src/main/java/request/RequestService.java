@@ -1,6 +1,7 @@
 package request;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,9 +11,9 @@ import java.util.Optional;
 public class RequestService {
     private RequestDAO requestDAO;
 
-    @Autowired
-    public RequestService(RequestDAO requestDAO) {
+    public RequestService(@Qualifier("postgresRequests")RequestDAO requestDAO){
         this.requestDAO = requestDAO;
+
     }
 
     public List<Request> getAllRequests() {
