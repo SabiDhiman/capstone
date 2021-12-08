@@ -71,7 +71,7 @@ public class RequestDatabaseAccessService implements RequestDAO{
                 """;
         return jdbcTemplate.update(
                 sql,
-                request.getId(),
+                request.getPost_id(),
                 request.getDonationType(),
                 request.getQuantity_needed());
     }
