@@ -29,8 +29,8 @@ public class HubService {
             return hubDAO.selectHubById(id);
         }
 
-        public void createHub(Hub hub) {
-            hubDAO.AddHub(hub);
+        public void addHub(Hub hub) {
+            hubDAO.addHub(hub);
         }
 
         public void deleteHub(Integer id) {

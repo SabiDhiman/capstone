@@ -28,8 +28,8 @@ public class HubController {
     }
 
     @PostMapping
-    public void createHub(@RequestBody Hub hub) {
-        hubService.createHub(hub);
+    public void addHub(@RequestBody Hub hub) {
+        hubService.addHub(hub);
     }
 
     @DeleteMapping("{id}")
