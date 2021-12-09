@@ -25,7 +25,7 @@ public class PostDataAccessService implements PostDAO {
                 INSERT INTO posts(post)
                 VALUES (?)""";
 
-        jdbcTemplate.update(sql, post.getPostBody());
+        jdbcTemplate.update(sql, post.getPost_body());
     }
 
     @Override
@@ -40,9 +40,9 @@ public class PostDataAccessService implements PostDAO {
     @Override
     public void updatePost(int id, Post post) {
         String sql = """
-                UPDATE posts""";
+                UPDATE posts SET hub_id = ?, post_body = ? WHERE id = ?""";
 
-        jdbcTemplate.update(sql, post.getId(), post.getPostBody());
+        jdbcTemplate.update(sql, post.getHub_id(), post.getPost_body(), id);
     }
 
 
