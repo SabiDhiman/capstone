@@ -16,8 +16,7 @@ public class HubDataAccessService implements HubDAO {
     @Override
     public List<Hub> selectAllHubs() {
         String sql = """
-                SELECT *
-                FROM hubs;
+                SELECT * FROM hubs;
                 """;
 
         return jdbcTemplate.query(sql, new HubRowMapper());
@@ -38,9 +37,9 @@ public class HubDataAccessService implements HubDAO {
 
 
     @Override
-    public int AddHub(Hub hub) {
+    public int addHub(Hub hub) {
         String sql = """
-                INSERT INTO hubs (name, location)
+                INSERT INTO hubs (hub_name, location)
                 VALUES (?, ?);
                 """;
         return jdbcTemplate.update(
@@ -62,13 +61,14 @@ public class HubDataAccessService implements HubDAO {
     public int updateHub(Integer id, Hub hub) {
         String sql = """
                 UPDATE hubs
-                SET name = ?, location = ?
+                SET hub_name = ?, location = ?
                 WHERE id = ?;
                 """;
         return jdbcTemplate.update(
                 sql,
                 hub.getName(),
-                hub.getLocation());
+                hub.getLocation(),
+                id);
     }
 
 

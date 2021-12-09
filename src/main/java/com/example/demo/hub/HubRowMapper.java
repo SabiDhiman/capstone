@@ -12,7 +12,7 @@ public class HubRowMapper implements RowMapper<Hub>{
     public Hub mapRow(ResultSet rs, int rowNum ) throws SQLException{
         Hub hub = new Hub(
                 rs.getInt("id"),
-                rs.getString("name"),
+                rs.getString("hub_name"),
                 rs.getString("location")
         );
         return hub;

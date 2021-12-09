@@ -28,7 +28,17 @@ public class HubController {
     }
 
     @PostMapping
-    public void createHub(@RequestBody Hub hub) {
-        hubService.createHub(hub);
+    public void addHub(@RequestBody Hub hub) {
+        hubService.addHub(hub);
+    }
+
+    @DeleteMapping("{id}")
+    public void deleteHub(@PathVariable("id") @RequestBody Integer id) {
+        hubService.deleteHub(id);
+    }
+
+    @PutMapping("{id}")
+    public void updateHub(@PathVariable("id") Integer id, @RequestBody Hub hub) {
+        hubService.updateHub(id, hub);
     }
 }

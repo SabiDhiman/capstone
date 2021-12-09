@@ -9,7 +9,7 @@ public interface HubDAO {
 
     Optional<Hub> selectHubById(Integer id);
 
-    int AddHub(Hub hub);
+    int addHub(Hub hub);
 
     int deleteHub(int id);
 
