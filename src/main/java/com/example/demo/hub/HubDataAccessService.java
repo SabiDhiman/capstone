@@ -68,7 +68,8 @@ public class HubDataAccessService implements HubDAO {
         return jdbcTemplate.update(
                 sql,
                 hub.getName(),
-                hub.getLocation());
+                hub.getLocation(),
+                id);
     }
 
 
