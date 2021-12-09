@@ -1,5 +1,6 @@
 package com.example.demo.user;
 
+import com.example.demo.hub.Hub;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,8 +28,17 @@ public class UserController {
     }
 
     @PostMapping
-    public void createUser(@RequestBody User user) {
-        userService.createUser(user);
+    public void addUser(@RequestBody User user) {
+        userService.addUser(user);
     }
 
+    @DeleteMapping("{id}")
+    public void deleteUser(@PathVariable("id") @RequestBody Integer id) {
+        userService.deleteUser(id);
+    }
+
+    @PutMapping("{id}")
+    public void updateUser(@PathVariable("id") Integer id, @RequestBody User user) {
+        userService.updateUser(id, user);
+    }
 }

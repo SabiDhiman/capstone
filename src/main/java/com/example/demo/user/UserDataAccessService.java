@@ -43,8 +43,8 @@ public class UserDataAccessService implements UserDAO {
     @Override
     public int addUser(User user) {
         String sql = """
-                INSERT INTO users (name, email)
-                VALUES (?, ?, ?);
+                INSERT INTO users (user_name, email)
+                VALUES (?, ?);
                 """;
         return jdbcTemplate.update(
                 sql,
@@ -67,13 +67,14 @@ public class UserDataAccessService implements UserDAO {
     public int updateUser(Integer id, User user) {
         String sql = """
                 UPDATE users
-                SET post_id = ?, donationType = ?, quantity_needed = ?
+                SET user_name = ?, email = ?
                 WHERE id = ?;
                 """;
         return jdbcTemplate.update(
                 sql,
                 user.getName(),
-                user.getEmail());
+                user.getEmail(),
+                id);
 
 
     }
