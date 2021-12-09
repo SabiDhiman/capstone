@@ -26,7 +26,7 @@ public class DonationController {
 
     //TODO fix getDonationByUser method
 
-    @GetMapping("/user_id")
+    @GetMapping("{user_id}")
     public Optional<Donation> getDonationByUser(@PathVariable("user_id") int user_id) throws Exception {
         return donationService.getDonationByUser(user_id);
     }
