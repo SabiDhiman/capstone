@@ -5,12 +5,12 @@ import java.util.Objects;
 public class Post {
     private Integer id;
     private Integer hub_id;
-    private String postBody;
+    private String post_body;
 
-    public Post(Integer id, Integer hub_id, String postBody) {
+    public Post(Integer id, Integer hub_id, String post_body) {
         this.id = id;
         this.hub_id = hub_id;
-        this.postBody = postBody;
+        this.post_body = post_body;
     }
 
     public Integer getId() {
@@ -29,12 +29,12 @@ public class Post {
         this.hub_id = hub_id;
     }
 
-    public String getPostBody() {
-        return postBody;
+    public String getPost_body() {
+        return post_body;
     }
 
-    public void setPostBody(String postBody) {
-        this.postBody = postBody;
+    public void setPost_body(String post_body) {
+        this.post_body = post_body;
     }
 
     @Override
@@ -42,12 +42,12 @@ public class Post {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Post post = (Post) o;
-        return Objects.equals(id, post.id) && Objects.equals(hub_id, post.hub_id) && Objects.equals(postBody, post.postBody);
+        return Objects.equals(id, post.id) && Objects.equals(hub_id, post.hub_id) && Objects.equals(post_body, post.post_body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, hub_id, postBody);
+        return Objects.hash(id, hub_id, post_body);
     }
 
     @Override
@@ -55,7 +55,7 @@ public class Post {
         return "Post{" +
                 "id=" + id +
                 ", hub_id=" + hub_id +
-                ", postBody='" + postBody + '\'' +
+                ", post_body='" + post_body + '\'' +
                 '}';
 
     }
