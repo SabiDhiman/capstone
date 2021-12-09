@@ -14,7 +14,7 @@ public class DonationController {
     private DonationService donationService;
 
     @Autowired
-    public DonationController(DonationService donationservice) {
+    public DonationController(DonationService donationService) {
         this.donationService = donationService;
     }
 
@@ -23,13 +23,23 @@ public class DonationController {
         return donationService.getAllDonations();
     }
 
-    @GetMapping("{user}")
-    public Optional<Donation> getDonationByUser(@PathVariable("user") User user) throws Exception {
-        return donationService.getDonationByUser(user);
+
+    //TODO fix getDonationByUser method
+
+    @GetMapping("/user_id")
+    public Optional<Donation> getDonationByUser(@PathVariable("user_id") int user_id) throws Exception {
+        return donationService.getDonationByUser(user_id);
     }
 
+
     @PostMapping
-    public void createDonation(@RequestBody Donation donation) {
+    public void addDonation(@RequestBody Donation donation) {
         donationService.createDonation(donation);
     }
+
+    @PutMapping
+    public void updateDonation(Integer id, @RequestBody Donation donation) {donationService.updateDonation(id, donation);}
+
+    @DeleteMapping("{id}")
+    public void deleteDonation(@PathVariable("id")Integer id){donationService.deleteDonation(id);}
 }

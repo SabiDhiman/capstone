@@ -21,14 +21,20 @@ public class DonationService {
         return donationDAO.selectAllDonations();
     }
 
-    public Optional<Donation> getDonationByUser(User user) throws Exception {
-        if (donationDAO.selectDonationByUser(user).isEmpty()){
-            throw new Exception("Donation from com.example.demo.user: " + user + " not found");
+    public Optional<Donation> getDonationByUser(int user_id) throws Exception {
+        if (donationDAO.selectDonationByUser(user_id).isEmpty()){
+            throw new Exception("Donation from User: " + user_id + " not found");
         }
-        return donationDAO.selectDonationByUser(user);
+        return donationDAO.selectDonationByUser(user_id);
     }
 
     public void createDonation(Donation donation) {
-        donationDAO.AddDonation(donation);
+        donationDAO.addDonation(donation);
     }
-}
+
+    public void deleteDonation(int id) {donationDAO.deleteDonation(id);}
+
+    public void updateDonation(Integer id, Donation donation){donationDAO.updateDonation(id, donation);}
+
+    }
+

@@ -8,9 +8,9 @@ import java.util.Optional;
 public interface DonationDAO {
     List<Donation> selectAllDonations();
 
-    Optional<Donation> selectDonationByUser(User user);
+    Optional<Donation> selectDonationByUser(int user_id);
 
-    int AddDonation(Donation donation);
+    int addDonation(Donation donation);
 
     int deleteDonation(int id);
 

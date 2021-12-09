@@ -27,19 +27,19 @@ public class DonationDataAccessService implements DonationDAO {
     }
 
     @Override
-    public Optional<Donation> selectDonationByUser(User user) {
+    public Optional<Donation> selectDonationByUser(int user_id) {
         String sql = """
                 SELECT *
                 FROM donations
                 WHERE user_id = ?;
                 """;
-        return jdbcTemplate.query(sql, new DonationRowMapper(), user.getId())
+        return jdbcTemplate.query(sql, new DonationRowMapper(), user_id)
                 .stream()
                 .findFirst();
     }
 
     @Override
-    public int AddDonation(Donation donation) {
+    public int addDonation(Donation donation) {
         String sql = """
                 INSERT INTO donations (user_id, donation_quantity, request_id)
                 VALUES (?, ?, ?);
@@ -63,7 +63,7 @@ public class DonationDataAccessService implements DonationDAO {
     @Override//y
     public int updateDonation(Integer id, Donation donation) {
         String sql = """
-                UPDATE requests
+                UPDATE donations
                 SET user_id = ?, donation_quantity = ?, request_id = ?
                 WHERE id = ?;
                 """;
@@ -71,7 +71,8 @@ public class DonationDataAccessService implements DonationDAO {
                 sql,
                 donation.getUser_id(),
                 donation.getDonation_quantity(),
-                donation.getRequest_id());
+                donation.getRequest_id(),
+                id);
     }
 
 
