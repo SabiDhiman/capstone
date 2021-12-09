@@ -20,8 +20,7 @@ public class UserDataAccessService implements UserDAO {
     @Override
     public List<User> selectAllUsers() {
         String sql = """
-                SELECT *
-                FROM users;
+                SELECT * FROM users;
                 """;
 
         return jdbcTemplate.query(sql, new UserRowMapper());

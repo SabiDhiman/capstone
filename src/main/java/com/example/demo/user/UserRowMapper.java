@@ -13,8 +13,8 @@ public class UserRowMapper implements RowMapper<User> {
     public User mapRow(ResultSet rs, int rowNum ) throws SQLException {
         User user = new User(
                 rs.getInt("id"),
-                rs.getString("name"),
-                rs.getString("location")
+                rs.getString("user_name"),
+                rs.getString("email")
         );
 
         return user;
