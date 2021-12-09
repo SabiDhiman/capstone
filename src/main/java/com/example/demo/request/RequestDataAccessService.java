@@ -38,15 +38,15 @@ public class RequestDataAccessService implements RequestDAO{
     }
 
     @Override
-    public int AddRequest(Request request) {
+    public int addRequest(Request request) {
         String sql = """
-                INSERT INTO requests (post_id, donationType, quantity_needed)
+                INSERT INTO requests (post_id, donation_type, quantity_needed)
                 VALUES (?, ?, ?);
                 """;
         return jdbcTemplate.update(
                 sql,
                 request.getPost_id(),
-                request.getDonationType(),
+                request.getDonation_type(),
                 request.getQuantity_needed());
     }
 
@@ -63,14 +63,17 @@ public class RequestDataAccessService implements RequestDAO{
     public int updateRequest(Integer id, Request request) {
         String sql = """
                 UPDATE requests
-                SET post_id = ?, donationType = ?, quantity_needed = ?
+                SET post_id = ?, donation_type = ?, quantity_needed = ?
                 WHERE id = ?;
                 """;
         return jdbcTemplate.update(
                 sql,
                 request.getPost_id(),
-                request.getDonationType(),
-                request.getQuantity_needed());
+                request.getDonation_type(),
+                request.getQuantity_needed(),
+                id);
+
+
     }
 
 }

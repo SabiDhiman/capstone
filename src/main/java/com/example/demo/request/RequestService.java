@@ -28,7 +28,13 @@ public class RequestService {
         return requestDAO.selectRequestById(id);
     }
 
-    public void createRequest(Request request) {
-        requestDAO.AddRequest(request);
+    public void addRequest(Request request) {
+        requestDAO.addRequest(request);
     }
+
+    public void deleteRequest(int id) {requestDAO.deleteRequest(id);}
+
+    public void updateRequest(Integer id, Request request){requestDAO.updateRequest(id, request);}
+
 }
+

@@ -14,7 +14,7 @@ public class RequestRowMapper implements RowMapper<Request> {
         Request request = new Request(
                 rs.getInt("id"),
                 rs.getInt("post_id"),
-                rs.getString("donationType"),
+                rs.getString("donation_type"),
                 rs.getInt("quantity_needed")
         );
 

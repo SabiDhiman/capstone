@@ -9,7 +9,7 @@ public interface RequestDAO {
 
     Optional<Request> selectRequestById(Integer id);
 
-    int AddRequest(Request request);
+    int addRequest(Request request);
 
     int deleteRequest(int id);
 

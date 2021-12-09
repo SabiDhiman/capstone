@@ -28,7 +28,13 @@ public class RequestController {
     }
 
     @PostMapping
-    public void createRequest(@RequestBody Request request) {
-        requestService.createRequest(request);
+    public void addRequest(@RequestBody Request request) {
+        requestService.addRequest(request);
     }
+
+    @PutMapping("{id}")
+    public void updateRequest(@PathVariable("id") Integer id, @RequestBody Request request) {requestService.updateRequest(id, request);}
+
+    @DeleteMapping("{id}")
+    public void deleteRequest(@PathVariable("id")Integer id){requestService.deleteRequest(id);}
 }
