@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.lang.module.ResolutionException;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,7 +28,22 @@ public class UserService {
         return userDAO.selectUserById(id);
     }
 
-    public void createUser(User user) {
+    public void addUser(User user) {
         userDAO.addUser(user);
+    }
+
+
+    public void deleteUser(Integer id) {
+        if(userDAO.selectUserById(id).isEmpty()){
+            throw new ResolutionException("User with id " + id + " not found");
+        }
+        userDAO.deleteUser(id);
+    }
+
+    public void updateUser(Integer id, User updatedUser) {
+        if(userDAO.selectUserById(id).isEmpty()){
+            throw new ResolutionException("User with id " + id + " not found");
+        }
+        userDAO.updateUser(id, updatedUser);
     }
 }
