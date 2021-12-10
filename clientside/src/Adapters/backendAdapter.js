@@ -165,3 +165,6 @@ const getUserById = (id) => {
         return response.data
     })
 }
+
+export default{getAllDonations, getDonationByUserId, addDonation, updateDonation, getAllHubs, updateHub, getHubsById, addHub, addNewPost, getAllPosts, updatePost, getAllRequests, getRequestById,
+     addNewRequest, updateRequest, getAllUsers, addNewUser, updateUser, getUserById }
