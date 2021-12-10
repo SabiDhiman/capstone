@@ -62,7 +62,7 @@ const updateHub = (id, hub) => {
 
 const addHub = (hub) => {
     return(
-        axios.post("http://localhost:8080/hub", hub)
+        axios.post("http://localhost:8080/hub/", hub)
     ).catch((e) => {
         console.log("backend adapter could not add hub")
     })
@@ -74,7 +74,7 @@ const addHub = (hub) => {
 
 const getAllPosts = () => {
     return(
-        axios.get("http://localhost:8080/post/")
+        axios.get("http://localhost:8080/post")
         .then(response => {
             return response.data
         })
@@ -89,9 +89,9 @@ const addNewPost = (post) => {
     })
 }
 
-const updatePost = (post) => {
+const updatePost = (id, post) => {
     return(
-        axios.put("http://localhost:8080/post/", post)
+        axios.put("http://localhost:8080/post/" + id, post)
     ).catch((e) => {
         console.log("backend adapter could not update post")
     })
@@ -108,7 +108,7 @@ const getAllRequests = () => {
 }
 
 const getRequestById = (id) => {
-    axios.get("http://localhost:8080/request" + id)
+    axios.get("http://localhost:8080/request/" + id)
     .then(response => {
         return response.data
     })
@@ -116,7 +116,7 @@ const getRequestById = (id) => {
 
 const addNewRequest = (request) => {
     return(
-       axios.post("http://localhost:8080/request",request)
+       axios.post("http://localhost:8080/request/",request)
     ).catch((e) => {
         console.log("backend adapter could not add request")
     })
@@ -124,7 +124,7 @@ const addNewRequest = (request) => {
 
 const updateRequest = (id, request) => {
     return(
-        axios.put("http://localhost:8080/request" + id, request)
+        axios.put("http://localhost:8080/request/" + id, request)
     ).catch((e) => {
         console.log("backend adapter could not update request")
     })
@@ -145,22 +145,22 @@ const getAllUsers = () => {
 
 const addNewUser = (user) => {
     return(
-       axios.post("http://localhost:8080/user",user)
+       axios.post("http://localhost:8080/user/",user)
     ).catch((e) => {
         console.log("backend adapter could not add user")
     })
 }
 
-const updateUser = (user) => {
+const updateUser = (user, id) => {
     return(
-        axios.put("http://localhost:8080/user", user)
+        axios.put("http://localhost:8080/user/" + id, user)
     ).catch((e) => {
         console.log("backend adapter could not update user")
     })
 }
 
 const getUserById = (id) => {
-    axios.get("http://localhost:8080/user" + id)
+    axios.get("http://localhost:8080/user/" + id)
     .then(response => {
         return response.data
     })
