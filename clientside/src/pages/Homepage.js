@@ -5,14 +5,14 @@ import Post from '../components/post/Post';
 
 const Homepage = () => {
 
-    const [posts, setPosts] = useState(null);
+    const [posts, setPosts] = useState([]);
 
   useEffect(()=>{
     getAllPosts().then(response =>setPosts(response))
   },[]);
 
 
-  if(posts){
+  if(posts.length>0){
     return (
         <div className="App">
           <header className="App-header">

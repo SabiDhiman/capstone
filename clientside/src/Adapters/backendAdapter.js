@@ -44,7 +44,7 @@ const getAllHubs = () => {
 }
 
 
-const getHubsById = (id) => {
+export const getHubsById = (id) => {
     axios.get("http://localhost:8080/hub/" + id)
     .then(response => {
         return response.data
