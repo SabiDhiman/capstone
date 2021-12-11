@@ -1,15 +1,27 @@
 import './App.css';
+import HomePage from "./pages/Homepage";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+
 
 function App() {
 
+  return(
+    <BrowserRouter>
+      <div className="router">
+        <header className="App-header">
 
-  return (
-    <div className="App">
-      <header className="App-header">
-       hdkjdello world
-      </header>
-    </div>
-  );
+          <h1>HomePage</h1>
+        </header>
+        
+        <Routes>
+          <Route path = "/" element={<HomePage />} />
+          {/* <Route path = "/LoginPage" element = {<LoginPage />} />
+          <Route path = "/DonationPage/:id" element = {<DonationPage />} /> */}
+        </Routes>
+
+      </div>
+    </BrowserRouter>
+  )
 }
 
 export default App;
