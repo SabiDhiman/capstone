@@ -1,7 +1,5 @@
 package com.example.demo.post;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -49,8 +47,7 @@ public class PostDataAccessService implements PostDAO {
 
     public List<Post> viewAllPosts(){
         String sql = """
-                SELECT *
-                FROM posts
+                SELECT * FROM posts
                 """;
         return jdbcTemplate.query(sql, autowiredRowmapper);
     }
