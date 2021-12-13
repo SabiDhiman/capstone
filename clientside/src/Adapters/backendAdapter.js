@@ -36,19 +36,24 @@ const updateDonation = (id, donation) => {
 
 //hubs
 
-const getAllHubs = () => {
-    axios.get("http://localhost:8080/hub")
-    .then(response => {
-        return response.data
-    })
+export const getAllHubs = () => {
+    return(
+        axios.get("http://localhost:8080/hub")
+        .then(response => {
+            return response.data
+        })
+    )
+
 }
 
 
 export const getHubsById = (id) => {
+    return(
     axios.get("http://localhost:8080/hub/" + id)
     .then(response => {
         return response.data
     })
+    )
 }
 
 const updateHub = (id, hub) => {

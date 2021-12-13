@@ -1,0 +1,17 @@
+
+.post-card{
+    width: 200px;
+    height: 250px;
+    text-align: center;
+    border-radius: 6px;
+    margin: auto;
+    background-color: #359bfa;
+    font-family: 'Asap', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 5%;
+}
+
+.post-body{
+    text-align: left;
+}
