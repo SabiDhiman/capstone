@@ -1,14 +1,18 @@
 import PostList from '../components/post/PostList';
 import {useState, useEffect} from "react"
-import {getAllPosts} from "../Adapters/backendAdapter"
-import Post from '../components/post/Post';
+import {getAllPosts, getAllHubs} from "../adapters/BackendAdapter"
 
 const Homepage = () => {
 
-    const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
+  const [hubs,setHubs] = useState([]);
 
   useEffect(()=>{
-    getAllPosts().then(response =>setPosts(response))
+    getAllPosts().then(response => setPosts(response))
+  },[]);
+
+   useEffect(()=>{
+     getAllHubs().then(response => setHubs(response))
   },[]);
 
 
@@ -18,7 +22,7 @@ const Homepage = () => {
           <header className="App-header">
            hello world
            
-                <PostList posts={posts}/>
+                <PostList posts={posts} hubs={hubs}/>
         
           
           </header>
