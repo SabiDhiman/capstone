@@ -12,11 +12,15 @@ import java.sql.SQLException;
 
 @Component
 public class PostRowMapper implements RowMapper<Post> {
+
     @Autowired
     @Qualifier("hubs")
     HubDAO hubDAO;
+
+    @Autowired
     @Qualifier("requests")
     RequestDAO requestDAO;
+    
     @Override
     public Post mapRow(ResultSet rs, int rowNum) throws SQLException{
 

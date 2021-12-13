@@ -1,7 +1,6 @@
 package com.example.demo.request;
 
 
-
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -9,11 +8,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository("requests")
-public class RequestDataAccessService implements RequestDAO{
+public class RequestDataAccessService implements RequestDAO {
 
     private JdbcTemplate jdbcTemplate;
 
-    public RequestDataAccessService(JdbcTemplate jdbcTemplate) {this.jdbcTemplate = jdbcTemplate;}
+    public RequestDataAccessService(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @Override
     public List<Request> selectAllRequests() {

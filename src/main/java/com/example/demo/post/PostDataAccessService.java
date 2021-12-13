@@ -11,7 +11,7 @@ import java.util.List;
 public class PostDataAccessService implements PostDAO {
 
     @Autowired
-    PostRowMapper autowiredRowmapper;
+    private PostRowMapper autowiredRowmapper;
 
     private JdbcTemplate jdbcTemplate;
 
