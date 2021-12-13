@@ -1,5 +1,5 @@
 import Post from "./Post"
-import {getHubsById} from '../../adapters/BackendAdapter'
+import {getHubsById} from '../../adapters/backendAdapter'
 
 const PostList = ({posts,hubs}) => {
 
