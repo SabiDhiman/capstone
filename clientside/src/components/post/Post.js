@@ -1,19 +1,32 @@
-import "./Post.css"
+import "./post.css"
 
 const Post = ({
     id,
     hub_id,
     hub_name,
-    post_body
+    post_body,
+    hub_location,
+    //requests
+     request_type,
+    // request_quantity
 }) => {
 
     return(
         <div className="post-card"> 
-        <p>{id}</p>
+
         <p>{hub_name}</p>
-        {/* <p>location</p> */}
+        <p>location: {hub_location}</p>
         <p className ="post-body">{post_body}</p>
-        <p>hub id : {hub_id}</p>
+        
+        <p>{request_type}</p>
+        {/* <p>Item needed: {request_type}</p>
+        <p> quantity needed: {request_quantity}</p> */}
+
+    {/* requests={requestComponents = requests.map(request => {
+                type = {request.donation_type}
+                quantity = {request.quantity_needed}
+            })} */}
+       
 
         </div>
     )

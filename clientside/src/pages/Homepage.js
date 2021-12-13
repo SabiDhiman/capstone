@@ -11,9 +11,9 @@ const Homepage = () => {
     getAllPosts().then(response => setPosts(response))
   },[]);
 
-   useEffect(()=>{
-     getAllHubs().then(response => setHubs(response))
-  },[]);
+  //  useEffect(()=>{
+  //    getAllHubs().then(response => setHubs(response))
+  // },[]);
 
 
   if(posts.length>0){
@@ -22,7 +22,7 @@ const Homepage = () => {
           <header className="App-header">
            hello world
            
-                <PostList posts={posts} hubs={hubs}/>
+                <PostList posts={posts}/>
         
           
           </header>

@@ -1,39 +1,26 @@
 import Post from "./Post"
-import {getHubsById} from '../../adapters/BackendAdapter'
+//import {getHubsById} from '../../adapters/BackendAdapter'
 
-const PostList = ({posts,hubs}) => {
+const PostList = ({posts}) => {
 
 
     //TODO: display requests in post, get hub name, location
     const postComponents = posts.map(post => {
-
-         let idHub = post.id;
-         let thisHub = getHubsById(idHub);
-         let hubName = thisHub.name;
 
         return (
             <Post
             id = {post.id}
             key={post.id}
             hub_id={post.hub_id}
-            hub_name= {hubName}
+            hub_location={post.hub.location}
+            hub_name= {post.hub.name}
             post_body={post.post_body}
-
+            //requests={post.requests}
+             requests_type={post.request.donation_type}
+            // requests_quantity={post.request.quantity_needed}
              />
         )
     })
-
-    // const hubComponents = hubs.map(hub => {
-
-    //     return (
-    //         <div>
-    //             <p>hub:</p>
-    //             <p>{hub.id}</p>
-    //             <p>hub name</p>
-    //             <p>{hub.name}</p>
-    //         </div>
-    //     )
-    // })
 
 
 
@@ -42,7 +29,6 @@ const PostList = ({posts,hubs}) => {
         <div className="post-list">
         {postComponents}
         <p>hello world: postList</p>
-        {/* //{hubComponents} */}
         </div>
     )
 }
