@@ -1,4 +1,4 @@
-import "./Post.css"
+import "./post.css"
 
 const Post = ({
     id,
