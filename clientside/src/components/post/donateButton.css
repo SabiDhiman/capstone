@@ -1,3 +1,14 @@
+
 .donateButton{
-    
+    background-color: rgb(255, 164, 180);
+    border-color: orangered;
+    border-radius:5px;
+    font:2em;
+}
+
+.donateButton:hover{
+    box-shadow: 4px 4px 4px rgb(129, 129, 129);
+    transform: scale(1.1);
+    cursor: pointer;
+
 }

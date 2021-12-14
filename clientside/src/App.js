@@ -15,8 +15,8 @@ function App() {
         
         <Routes>
           <Route path = "/" element={<HomePage />} />
-          {/* <Route path = "/LoginPage" element = {<LoginPage />} />
-          <Route path = "/DonationPage/:id" element = {<DonationPage />} /> */}
+          {/* <Route path = "/LoginPage" element = {<LoginPage />} />*/}
+          {/* <Route path = "/DonationPage" element = {<DonationPage />} />  */}
         </Routes>
 
       </div>
