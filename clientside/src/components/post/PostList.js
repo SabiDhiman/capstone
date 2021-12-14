@@ -4,7 +4,9 @@ import Post from "./Post"
 const PostList = ({posts}) => {
 
 
-    //TODO: display requests in post, get hub name, location
+    //TODO: display requests in post
+    console.log(posts[0].request.donation_type)
+
     const postComponents = posts.map(post => {
 
         return (
@@ -16,8 +18,8 @@ const PostList = ({posts}) => {
             hub_name= {post.hub.name}
             post_body={post.post_body}
             //requests={post.requests}
-             requests_type={post.request.donation_type}
-            // requests_quantity={post.request.quantity_needed}
+            requests_type={post.request.donation_type}
+            requests_quantity={post.request.quantity_needed}
              />
         )
     })

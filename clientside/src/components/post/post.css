@@ -1,7 +1,8 @@
 
 .post-card{
     width: 250px;
-    height: 200px;
+    height: auto;
+    /*height: 200px;*/
     text-align: center;
     background-color: #FFD541;
     border-radius: 10px;

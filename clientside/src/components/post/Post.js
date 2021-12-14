@@ -6,11 +6,9 @@ const Post = ({
     hub_name,
     post_body,
     hub_location,
-    //requests
-     request_type,
-    // request_quantity
+    requests_type,
+    requests_quantity
 }) => {
-
     return(
         <div className="post-card"> 
 
@@ -18,16 +16,11 @@ const Post = ({
         <p>location: {hub_location}</p>
         <p className ="post-body">{post_body}</p>
         
-        <p>{request_type}</p>
+        <p>Item needed: {requests_type}</p>
+        <p>Quantity needed: {requests_quantity}</p>
         {/* <p>Item needed: {request_type}</p>
         <p> quantity needed: {request_quantity}</p> */}
-
-    {/* requests={requestComponents = requests.map(request => {
-                type = {request.donation_type}
-                quantity = {request.quantity_needed}
-            })} */}
-       
-
+        
         </div>
     )
 }

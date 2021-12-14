@@ -28,8 +28,8 @@ public class PostRowMapper implements RowMapper<Post> {
                 rs.getInt("id"),
                 rs.getInt("hub_id"),
                 rs.getString("post_body"),
-                hubDAO.selectHubById(rs.getInt("id")),
-                requestDAO.selectRequestById(rs.getInt("id"))
+                hubDAO.selectHubById(rs.getInt("hub_id")),
+                requestDAO.selectRequestByPostId(rs.getInt("id"))
         );
 
         return post;

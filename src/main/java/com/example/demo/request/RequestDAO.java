@@ -7,6 +7,8 @@ public interface RequestDAO {
 
     List<Request> selectAllRequests();
 
+    Optional<Request> selectRequestByPostId(Integer id);
+
     Optional<Request> selectRequestById(Integer id);
 
     int addRequest(Request request);

@@ -22,6 +22,11 @@ public class RequestController {
         return requestService.getAllRequests();
     }
 
+    @GetMapping("/postid/{id}")
+    public Optional<Request> getRequestByPostId(@PathVariable("id") int id) throws Exception {
+        return requestService.getRequestByPostId(id);
+    }
+
     @GetMapping("{id}")
     public Optional<Request> getRequestById(@PathVariable("id") int id) throws Exception {
         return requestService.getRequestById(id);
