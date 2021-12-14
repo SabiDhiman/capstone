@@ -1,0 +1,33 @@
+
+.belll {
+    height: 30px;
+    width: auto;
+}
+
+.notifications {
+    height: 30px;
+    width: auto; 
+}
+
+.messages {
+    height: 30px;
+    width: auto; 
+}
+
+.logo{
+    height: 30px;
+    width: auto; 
+    display: flex;
+    justify-content: flex-start;
+}
+
+.website-name {
+    font-family: lato;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* .main-navbar-container {
+    display: flex;
+    justify-content: space-between;
+} */

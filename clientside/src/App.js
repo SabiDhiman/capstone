@@ -1,12 +1,15 @@
+import React from 'react';
 import './App.css';
 import HomePage from "./pages/Homepage";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Navbar from './components/navbar';
 
 
 function App() {
 
   return(
     <BrowserRouter>
+    <Navbar/>
       <div className="router">
         <header className="App-header">
 
