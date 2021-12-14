@@ -1,4 +1,5 @@
 import "./post.css"
+import DonateButton from "./DonateButton";
 
 const Post = ({
     id,
@@ -20,6 +21,8 @@ const Post = ({
         <p>Quantity needed: {requests_quantity}</p>
         {/* <p>Item needed: {request_type}</p>
         <p> quantity needed: {request_quantity}</p> */}
+
+        <DonateButton />
         
         </div>
     )

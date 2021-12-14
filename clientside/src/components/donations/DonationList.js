@@ -8,6 +8,7 @@ const DonationList = ({donations}) => {
             <Donation 
             key = {donation.id}
             quantity = {donation.quantity}
+            type = {donation.request.donation_type}
              />
         )
     })
