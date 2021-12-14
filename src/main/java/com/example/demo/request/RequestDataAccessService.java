@@ -27,6 +27,18 @@ public class RequestDataAccessService implements RequestDAO {
     }
 
     @Override
+    public Optional<Request> selectRequestByPostId(Integer id) {
+        String sql = """
+                SELECT *
+                FROM requests
+                WHERE post_id = ?;
+                """;
+        return jdbcTemplate.query(sql, new RequestRowMapper(), id)
+                .stream()
+                .findFirst();
+    }
+
+    @Override
     public Optional<Request> selectRequestById(Integer id) {
         String sql = """
                 SELECT *

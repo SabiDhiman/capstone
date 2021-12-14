@@ -1,6 +1,9 @@
 import PostList from '../components/post/PostList';
 import {useState, useEffect} from "react"
-import {getAllPosts, getAllHubs} from "../adapters/backendAdapter"
+
+import {getAllPosts, getAllHubs} from "../adapters/BackendAdapter"
+import { useNavigate } from 'react-router-dom';
+
 
 const Homepage = () => {
 
@@ -11,9 +14,9 @@ const Homepage = () => {
     getAllPosts().then(response => setPosts(response))
   },[]);
 
-   useEffect(()=>{
-     getAllHubs().then(response => setHubs(response))
-  },[]);
+  //  useEffect(()=>{
+  //    getAllHubs().then(response => setHubs(response))
+  // },[]);
 
 
   if(posts.length>0){
@@ -22,7 +25,7 @@ const Homepage = () => {
           <header className="App-header">
            hello world
            
-                <PostList posts={posts} hubs={hubs}/>
+                <PostList posts={posts}/>
         
           
           </header>

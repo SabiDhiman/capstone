@@ -17,6 +17,7 @@ public class DonationService {
         this.donationDAO = donationDAO;
     }
 
+
     public List<Donation> getAllDonations() {
         return donationDAO.selectAllDonations();
     }

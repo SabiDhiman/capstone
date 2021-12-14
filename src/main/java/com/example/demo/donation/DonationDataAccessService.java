@@ -1,6 +1,7 @@
 package com.example.demo.donation;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -12,6 +13,10 @@ import java.util.Optional;
 
 @Repository("donations")
 public class DonationDataAccessService implements DonationDAO {
+
+    @Autowired
+    DonationRowMapper donationRowMapper;
+
     private org.springframework.jdbc.core.JdbcTemplate jdbcTemplate;
 
     public DonationDataAccessService(JdbcTemplate jdbcTemplate) {this.jdbcTemplate = jdbcTemplate;}
@@ -23,7 +28,7 @@ public class DonationDataAccessService implements DonationDAO {
                 FROM donations;
                 """;
 
-        return jdbcTemplate.query(sql, new DonationRowMapper());
+        return jdbcTemplate.query(sql, donationRowMapper);
     }
 
     @Override
@@ -33,7 +38,7 @@ public class DonationDataAccessService implements DonationDAO {
                 FROM donations
                 WHERE user_id = ?;
                 """;
-        return jdbcTemplate.query(sql, new DonationRowMapper(), user_id)
+        return jdbcTemplate.query(sql, donationRowMapper, user_id)
                 .stream()
                 .findFirst();
     }

@@ -21,6 +21,13 @@ public class RequestService {
         return requestDAO.selectAllRequests();
     }
 
+    public Optional<Request> getRequestByPostId(int id) throws Exception {
+        if (requestDAO.selectRequestByPostId(id).isEmpty()){
+            throw new Exception("Request with the id " + id + " not found");
+        }
+        return requestDAO.selectRequestByPostId(id);
+    }
+
     public Optional<Request> getRequestById(int id) throws Exception {
         if (requestDAO.selectRequestById(id).isEmpty()){
             throw new Exception("Request with the id " + id + " not found");
