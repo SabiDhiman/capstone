@@ -7,6 +7,7 @@ const Post = ({
     hub_name,
     post_body,
     hub_location,
+    request_id,
     requests_type,
     requests_quantity
 }) => {
@@ -22,7 +23,7 @@ const Post = ({
         {/* <p>Item needed: {request_type}</p>
         <p> quantity needed: {request_quantity}</p> */}
 
-        <DonateButton />
+        <DonateButton id={request_id}/>
         
         </div>
     )

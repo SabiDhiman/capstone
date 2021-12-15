@@ -1,17 +1,18 @@
 import { useNavigate } from "react-router-dom"
 import './DonateButton.css'
 
-const DonateButton = () => {
+const DonateButton = ({id}) => {
+    let navigate = useNavigate();
 
     const handleCLick = () =>{
 
-        let navigate = useNavigate;
-        navigate('/formPage')
+        
+        navigate(`/${id}/FormPage`)
     }
 
     return(
         <div>
-        <button onClick={handleCLick} className="donateButton">Donate</button>
+        <button onClick={handleCLick} id ={id} className="donateButton">Donate</button>
         </div>
     )
 }
