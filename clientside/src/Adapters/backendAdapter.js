@@ -20,7 +20,7 @@ export const getDonationByUserId = (id) => {
     )
 }
 
-const addDonation = (donation) => {
+export const addDonation = (donation) => {
     return(
     axios.post("http://localhost:8080/donations/", donation)
     ).catch((e) => {
@@ -118,11 +118,13 @@ export const getAllRequests = () => {
     )
 }
 
-const getRequestById = (id) => {
+export const getRequestById = (id) => {
+    return(
     axios.get("http://localhost:8080/request/" + id)
     .then(response => {
         return response.data
     })
+    )
 }
 
 const getRequestByPostId = (id) => {

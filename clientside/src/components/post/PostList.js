@@ -18,6 +18,7 @@ const PostList = ({posts}) => {
             hub_name= {post.hub.name}
             post_body={post.post_body}
             //requests={post.requests}
+            request_id = {post.request.id}
             requests_type={post.request.donation_type}
             requests_quantity={post.request.quantity_needed}
              />
