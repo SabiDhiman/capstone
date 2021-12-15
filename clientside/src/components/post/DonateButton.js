@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import './DonateButton.css'
+import './donateButton.css'
 
 const DonateButton = ({id}) => {
     let navigate = useNavigate();
