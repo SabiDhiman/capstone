@@ -4,14 +4,39 @@
     width: auto;
 }
 
+.belll:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 .notifications {
     height: 30px;
     width: auto; 
 }
 
+.notifications:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.profile-icon{
+    height: 60px;
+    width: auto; 
+}
+
+.profile-icon:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 .messages {
     height: 30px;
     width: auto; 
+}
+
+.messages:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .logo{
@@ -22,7 +47,6 @@
 }
 
 .logo:hover{
-    box-shadow: 4px 4px 4px rgb(129, 129, 129);
     transform: scale(1.1);
     cursor: pointer;
 }
@@ -32,6 +56,8 @@
     display: flex;
     justify-content: flex-start;
 }
+
+
 
 /* .main-navbar-container {
     display: flex;
