@@ -1,3 +1,4 @@
+
 /* .App {
   text-align: center;
 }
@@ -6,20 +7,23 @@
   height: 40vmin;
   pointer-events: none;
 }
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home,
+.mydonations,
+.posts{
   display: flex;
-  flex-direction: column;
+  height: 90vh;
   align-items: center;
   justify-content: center;
+
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -40,10 +44,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 * {
-
   font-family: 'Lato', sans-serif;
 }
 
 body {
   background-color: #FFF3C7;
+  font-size: 3rem;
 }
