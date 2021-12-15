@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /* .App {
   text-align: center;
 }
@@ -7,9 +7,7 @@
   height: 40vmin;
   pointer-events: none;
 }
-=======
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
->>>>>>> sabiFrontEnd
 
 * {
   box-sizing: border-box;
@@ -25,7 +23,7 @@
   height: 90vh;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
+
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -46,9 +44,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 * {
-
   font-family: 'Lato', sans-serif;
-=======
+}
+
+body {
+  background-color: #FFF3C7;
   font-size: 3rem;
->>>>>>> sabiFrontEnd
 }

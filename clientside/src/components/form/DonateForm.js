@@ -1,6 +1,6 @@
-import { getRequestById } from "../../adapters/backendAdapter";
+import { getRequestById } from "../../Adapters/backendAdapter";
 import { useState } from "react";
-import { addDonation } from "../../adapters/backendAdapter";
+import { addDonation } from "../../Adapters/backendAdapter";
 
 const DonateForm = ({id},{hub_name}) => {
 
