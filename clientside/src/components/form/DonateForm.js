@@ -1,6 +1,6 @@
-import { getRequestById } from "../../Adapters/backendAdapter";
+import { getRequestById } from "../../adapters/backendAdapter";
 import { useState } from "react";
-import { addDonation } from "../../Adapters/backendAdapter";
+import { addDonation } from "../../adapters/backendAdapter";
 
 const DonateForm = ({id},{hub_name}) => {
 
@@ -16,7 +16,7 @@ const DonateForm = ({id},{hub_name}) => {
         event.preventDefault();
         const newDonation = {
             user_id: userId,
-            donation_quantity: donation_quantity,
+            donation_quantity: quantity,
             request_id: id,
             request: request
             
