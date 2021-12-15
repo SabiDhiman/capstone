@@ -30,7 +30,7 @@ INSERT INTO requests (post_id, donation_type, quantity_needed) VALUES (6, 'Coats
 
 INSERT INTO donations (user_id, request_id, donation_quantity) VALUES (1, 1, 2);
 INSERT INTO donations (user_id, request_id, donation_quantity) VALUES (2, 2, 3);
-INSERT INTO donations (user_id, request_id, donation_quantity) VALUES (3, 1, 2);
-INSERT INTO donations (user_id, request_id, donation_quantity) VALUES (4, 4, 1);
-INSERT INTO donations (user_id, request_id, donation_quantity) VALUES (5, 2, 3);
-INSERT INTO donations (user_id, request_id, donation_quantity) VALUES (6, 6, 2);
+INSERT INTO donations (user_id, request_id, donation_quantity) VALUES (1, 1, 2);
+INSERT INTO donations (user_id, request_id, donation_quantity) VALUES (2, 4, 1);
+INSERT INTO donations (user_id, request_id, donation_quantity) VALUES (2, 2, 3);
+INSERT INTO donations (user_id, request_id, donation_quantity) VALUES (1, 6, 2);

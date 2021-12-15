@@ -8,18 +8,23 @@ const DonateForm = ({id},{hub_name}) => {
     const request = getRequestById(id);
 
     const[quantity, setQuantity] = useState(null);
-    const [donation_type, setDonation_type] = useState(null);
+    //const [donation_type, setDonation_type] = useState(null);
     const userId = 1;
 
 
     const handleFormSubmission = (event) => {
         event.preventDefault();
         const newDonation = {
-            donation_type: donation_type,
-            donation_quantity: quantity
+            user_id: userId,
+            donation_quantity: donation_quantity,
+            request_id: id,
+            request: request
+            
         };   
         addDonation(newDonation);
     }
+
+
 
     const handleQuantityChange = (event) =>{
         setQuantity(event.target.value);
