@@ -1,5 +1,6 @@
 
- .App {
+
+/* .App {
   text-align: center;
 }
 
@@ -42,9 +43,12 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 * {
-
   font-family: 'Lato', sans-serif;
 
-  font-size: 3rem;
+}
 
-} */
+body {
+  background-color: #FFF3C7;
+  font-size: 3rem;
+}
+

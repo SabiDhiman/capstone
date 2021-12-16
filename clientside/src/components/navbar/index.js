@@ -4,6 +4,7 @@ import bell from './navImage/bell.png';
 import message from './navImage/message.png';
 import home from './navImage/home.png';
 import logo from './navImage/logo.png';
+import profile from './navImage/profile-icon.png';
 import './nav.css'
 
 
@@ -13,7 +14,7 @@ const Navbar = () => {
         <Nav>
             <NavLink to="/">
             <img src={logo} className="logo" alt="homepage-icon"/>
-            <h2 className="website-name">Some1InNeed</h2>
+            <h2 className="website-name">&ensp;Some1InNeed</h2>
             </NavLink>
             <Bars/>
             <NavMenu>
@@ -30,9 +31,9 @@ const Navbar = () => {
                 </NavLink>
 
             </NavMenu>
-            <NavBtn>
-                <NavBtnLink to='/signup'>Sign In</NavBtnLink>
-            </NavBtn>
+            <NavLink to='/DonationPage' activeStyle>
+                <img src={profile} className="profile-icon" alt="notification-icon"/>
+                </NavLink>
         </Nav>
     </div>
 

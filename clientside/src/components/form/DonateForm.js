@@ -2,24 +2,28 @@ import { getRequestById } from "../../adapters/backendAdapter";
 import { useState } from "react";
 import { addDonation } from "../../adapters/backendAdapter";
 
-const DonateForm = ({id},{hub_name}) => {
+const DonateForm = ({id}) => {
 
-    //we need to get hub name and donation_type
     const request = getRequestById(id);
-
     const[quantity, setQuantity] = useState(null);
-    const [donation_type, setDonation_type] = useState(null);
+
+    //the user id below needs to be passed in from context
     const userId = 1;
 
 
     const handleFormSubmission = (event) => {
         event.preventDefault();
         const newDonation = {
-            donation_type: donation_type,
-            donation_quantity: quantity
+            user_id: userId,
+            donation_quantity: quantity,
+            request_id: id,
+            request: request
+            
         };   
         addDonation(newDonation);
     }
+
+
 
     const handleQuantityChange = (event) =>{
         setQuantity(event.target.value);
