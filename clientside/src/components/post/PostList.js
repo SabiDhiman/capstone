@@ -1,5 +1,7 @@
 import Post from "./Post"
 import {getHubsById} from '../../adapters/backendAdapter'
+import hubImage from './postImages/hubImage.jpg';
+import './PostList.css';
 
 const PostList = ({posts}) => {
 
@@ -10,6 +12,8 @@ const PostList = ({posts}) => {
     const postComponents = posts.map(post => {
 
         return (
+            <>
+            
             <Post
             id = {post.id}
             key={post.id}
@@ -22,6 +26,7 @@ const PostList = ({posts}) => {
             requests_type={post.request.donation_type}
             requests_quantity={post.request.quantity_needed}
              />
+              </>
         )
     })
 
