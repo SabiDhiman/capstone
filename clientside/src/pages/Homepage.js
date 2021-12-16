@@ -3,9 +3,14 @@ import {useState, useEffect} from "react"
 
 import {getAllPosts, getAllHubs} from "../adapters/backendAdapter"
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '../UserContext';
 
 
 const Homepage = () => {
+
+  const {user} = useContext(UserContext)
+
 
   const [posts, setPosts] = useState([]);
   const [hubs,setHubs] = useState([]);
