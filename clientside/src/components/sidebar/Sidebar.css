@@ -1,5 +1,5 @@
 .sidebar {
-    background-color: #F8BA5D;
+    background-color: #FFD541;
     height: 80px;
     display: flex;
     justify-content: start;
@@ -10,6 +10,10 @@
     margin-left: 2rem;
     font-size: 2rem;
     background: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
   }
   
   .side-menu {
@@ -58,6 +62,8 @@
   .side-menu-items {
     width: 100%;
     size: 20px;
+    margin-top: 5rem;
+    padding: 2rem;
   }
   
   .sidebar-toggle {
@@ -73,3 +79,64 @@
     margin-left: 16px;
   }
   
+
+.belll {
+  height: 30px;
+  width: auto;
+}
+
+.belll:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.notifications {
+  height: 30px;
+  width: auto; 
+}
+
+.notifications:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.profile-icon{
+  height: 60px;
+  width: auto; 
+}
+
+.profile-icon:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.messages {
+  height: 30px;
+  width: auto; 
+}
+
+.messages:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.logo{
+  height: 30px;
+  width: auto; 
+  display: flex;
+  justify-content: flex-start;
+}
+
+.logo:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.website-name {
+  font-family: lato;
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+
