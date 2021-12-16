@@ -136,11 +136,15 @@ const updateRequest = (id, request) => {
 
 
 //users
-const getAllUsers = () => {
-    axios.get("http://localhost:8080/user")
-    .then(response => {
-        return user.data
-    })
+export const getAllUsers = () => {
+    return(
+        axios.get("http://localhost:8080/user")
+        .then(response => {
+            return user.data
+        })
+        
+    )
+   
 }
 
 const addNewUser = (user) => {
