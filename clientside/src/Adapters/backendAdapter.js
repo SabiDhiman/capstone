@@ -2,21 +2,25 @@ import axios from "axios";
 
 ///Donations
 
-const getAllDonations = () => {
+export const getAllDonations = () => {
+    return(
     axios.get("http://localhost:8080/donations")
     .then(response => {
         return response.data
     })
+    )
 }
 
-const getDonationByUserId = (id) => {
+export const getDonationByUserId = (id) => {
+    return(
     axios.get("http://localhost:8080/donations/" + id)
     .then(response => {
         return response.data
     })
+    )
 }
 
-const addDonation = (donation) => {
+export const addDonation = (donation) => {
     return(
     axios.post("http://localhost:8080/donations/", donation)
     ).catch((e) => {
@@ -36,19 +40,24 @@ const updateDonation = (id, donation) => {
 
 //hubs
 
-const getAllHubs = () => {
-    axios.get("http://localhost:8080/hub")
-    .then(response => {
-        return response.data
-    })
+export const getAllHubs = () => {
+    return(
+        axios.get("http://localhost:8080/hub")
+        .then(response => {
+            return response.data
+        })
+    )
+
 }
 
 
-const getHubsById = (id) => {
+export const getHubsById = (id) => {
+    return(
     axios.get("http://localhost:8080/hub/" + id)
-    .then(reposnse => {
+    .then(response => {
         return response.data
     })
+    )
 }
 
 const updateHub = (id, hub) => {
@@ -69,16 +78,16 @@ const addHub = (hub) => {
 }
 
 
-
 //post
 
-const getAllPosts = () => {
+export const getAllPosts = () => {
     return(
         axios.get("http://localhost:8080/post")
         .then(response => {
             return response.data
         })
     )
+
 }
 
 const addNewPost = (post) => {
@@ -100,18 +109,31 @@ const updatePost = (id, post) => {
 
 //requests
 
-const getAllRequests = () => {
+export const getAllRequests = () => {
+    return(
     axios.get("http://localhost:8080/request")
     .then(response => {
         return response.data
     })
+    )
 }
 
-const getRequestById = (id) => {
+export const getRequestById = (id) => {
+    return(
     axios.get("http://localhost:8080/request/" + id)
     .then(response => {
         return response.data
     })
+    )
+}
+
+const getRequestByPostId = (id) => {
+    return(
+    axios.get("http://localhost:8080/request/postid" + id)
+    .then(response => {
+        return response.data
+    })
+    )
 }
 
 const addNewRequest = (request) => {
@@ -136,15 +158,11 @@ const updateRequest = (id, request) => {
 
 
 //users
-export const getAllUsers = () => {
-    return(
-        axios.get("http://localhost:8080/user")
-        .then(response => {
-            return user.data
-        })
-        
-    )
-   
+const getAllUsers = () => {
+    axios.get("http://localhost:8080/user")
+    .then(response => {
+        return response.data
+    })
 }
 
 const addNewUser = (user) => {
@@ -169,3 +187,6 @@ const getUserById = (id) => {
         return response.data
     })
 }
+
+export default {getAllDonations, getDonationByUserId, addDonation, updateDonation, getAllHubs, updateHub, getHubsById, addHub, addNewPost, getAllPosts, updatePost, getAllRequests, getRequestById, getRequestByPostId,
+     addNewRequest, updateRequest, getAllUsers, addNewUser, updateUser, getUserById }

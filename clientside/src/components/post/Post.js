@@ -1,37 +1,31 @@
+import "./post.css"
+import DonateButton from "./DonateButton";
 
-   
-import React from "react";
+const Post = ({
+    id,
+    hub_id,
+    hub_name,
+    post_body,
+    hub_location,
+    request_id,
+    requests_type,
+    requests_quantity
+}) => {
+    return(
+        <div className="post-card"> 
 
-export default class FetchRandomUser extends React.Component {
-  state = {
-    loading: true,
-    person: null
-  };
-
-  async componentDidMount() {
-    const url = "http://localhost:8080/post";
-    const response = await fetch(url);
-    const data = await response.json();
-    this.setState({ post: data.results[0], loading: false });
-  }
-
-  render() {
-    if (this.state.loading) {
-      return <div>loading...</div>;
-    }
-
-    if (!this.state.post) {
-      return <div>didn't get a post</div>;
-    }
-
-    return (
-      <div>
-        <div>{this.state.post.id}</div>
-        <div>{this.state.post.hub_id}</div>
-        <div>{this.state.post.post_id}</div>
+        <p>{hub_name}</p>
+        <p>location: {hub_location}</p>
+        <p className ="post-body">{post_body}</p>
         
-      </div>
-    );
-  }
-}
+        <p>Item needed: {requests_type}</p>
+        <p>Quantity needed: {requests_quantity}</p>
+        {/* <p>Item needed: {request_type}</p>
+        <p> quantity needed: {request_quantity}</p> */}
 
+        <DonateButton id={request_id}/>
+        
+        </div>
+    )
+}
+export default Post;

@@ -1,5 +1,4 @@
-
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import React from 'react';
 import './App.css';
 import Sidebar from './components/sidebar/Sidebar'
 import HomePage from './pages/Homepage'

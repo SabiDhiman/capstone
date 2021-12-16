@@ -1,4 +1,15 @@
+<<<<<<< HEAD
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+=======
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+>>>>>>> sabiFrontEnd
 
 * {
   box-sizing: border-box;
@@ -14,5 +25,30 @@
   height: 90vh;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+
+  font-family: 'Lato', sans-serif;
+=======
   font-size: 3rem;
+>>>>>>> sabiFrontEnd
 }
