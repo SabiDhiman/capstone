@@ -29,21 +29,21 @@ function Sidebar() {
 
 
             <Nav>
-            <NavLink to="/">
+            <NavLink to="/homePage">
             <img src={logo} className="logo" alt="homepage-icon"/>
             <p className="website-name">&ensp;Some1InNeed</p>
             </NavLink>
             <Bars/>
             <NavMenu>
-                <NavLink to='/' activeStyle>
+                <NavLink to='/homePage' activeStyle>
                 <img src={home} className="belll" alt="homepage-icon"/>
                 </NavLink>
 
-                <NavLink to='/about' activeStyle>
+                <NavLink to='/homePage' activeStyle>
                 <img src={message} className="messages" alt="messages-icon"/>
                 </NavLink>
 
-                <NavLink to='/about' activeStyle>
+                <NavLink to='/homePage' activeStyle>
                 <img src={bell} className="notifications" alt="notification-icon"/>
                 </NavLink>
 
