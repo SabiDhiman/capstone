@@ -1,7 +1,7 @@
-
 import React, {useState, useEffect, useContext} from 'react';
 import {useNavigate} from 'react-router-dom'
 import { UserContext } from '../UserContext';
+import './Login.css'
 
 
 
@@ -18,9 +18,9 @@ const navigate = useNavigate();
 async function handleLoginClick()
 {
  
-   
+
   let results = await fetch("http://localhost:8080/user")
-  
+
   results = await results.json();
   console.log(results)
 // console.log("here", id)
@@ -30,10 +30,10 @@ async function handleLoginClick()
   console.log(userInfo)
 
 if(userInfo.length !== 0) {
-  
+
 login(userInfo[0])
 
-    navigate("/homePage");
+    navigate("/");
 }
 
 
@@ -42,14 +42,13 @@ return (
 
 
 <div className="login-page">
-  
+
   <div className="main-container">
  
 
-  
     <h1>Login</h1>
 
-  
+
 
   <div className = "input-container">
 
@@ -59,21 +58,10 @@ return (
 
 
   <div className = "button-container"> 
-  <button
-onClick={async () => handleLoginClick()
- 
-
-}
->
-login
-</button>
+  <button onClick={async () => handleLoginClick()}>login</button>
   </div>
 
-  
 
-
-
- 
   </div>
 </div>
 
