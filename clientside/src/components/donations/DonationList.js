@@ -7,7 +7,7 @@ const DonationList = ({donations}) => {
         return(
             <Donation 
             key = {donation.id}
-            quantity = {donation.quantity}
+            quantity = {donation.donation_quantity}
             type = {donation.request.donation_type}
              />
         )
