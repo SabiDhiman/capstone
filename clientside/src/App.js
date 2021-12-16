@@ -23,33 +23,16 @@ function App() {
 
   
   return (
-
-          {/* <h1>HomePage</h1> */}
-        </header>
-        
+          <BrowserRouter>
+            <Sidebar/>
         <Routes>
-          <Route path = "/" element={<HomePage />} />
-          <Route path = "/:id/FormPage" element={<FormPage />} />
-          {/* <Route path = "/LoginPage" element = {<LoginPage />} />*/}
-          <Route path = "/DonationPage" element = {<DonationPage />} /> 
+          <Route exact path = "/" element={<HomePage />} />
+          <Route path = "/:id/formPage" element={<FormPage />} />
+          <Route path = "/loginPage" element = {<LoginPage />} />
+          <Route path = "/donationPage" element = {<DonationPage />} /> 
         </Routes>
-
-
-    <>
-      <BrowserRouter>
-    <Sidebar/>
-    <Routes>
-      
-   
-   <Route path = "/" element={<HomePage />} />
-         
-          <Route path = "/loginpage" element = {<LoginPage />} />
-         
-          </Routes>
         </BrowserRouter>
-    
-  
-    </>
+
   );
 }
 
