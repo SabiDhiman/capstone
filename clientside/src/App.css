@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-/* .App {
+
+ .App {
   text-align: center;
 }
 
@@ -7,15 +7,17 @@
   height: 40vmin;
   pointer-events: none;
 }
-=======
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
->>>>>>> sabiFrontEnd
 
-* {
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
+
+  
 }
 
 .home,
@@ -25,7 +27,7 @@
   height: 90vh;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
+
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -34,21 +36,15 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 * {
 
   font-family: 'Lato', sans-serif;
-=======
+
   font-size: 3rem;
->>>>>>> sabiFrontEnd
-}
+
+} */
