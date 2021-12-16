@@ -1,9 +1,11 @@
-import {getAllDonations} from '../components/post/PostList';
+import { getAllDonations } from '../adapters/backendAdapter';
 import DonationList from '../components/donations/DonationList';
 import {useState, useEffect} from 'react';
 
 
 const DonationPage = () => {
+
+  //need to pass in user id and filter by user
 
     const [donations, setDonations] = useState([]);
 
@@ -18,7 +20,7 @@ const DonationPage = () => {
         return (
             <div className="donation-page">
               <header className="donation-header">
-               hello world
+               Welcome to donation page
                
                     <DonationList donations={donations}/>
               
