@@ -1,18 +1,28 @@
 import { getAllDonations } from '../adapters/backendAdapter';
 import DonationList from '../components/donations/DonationList';
 import {useState, useEffect} from 'react';
+import { UserContext } from '../UserContext';
+import { useContext } from 'react';
 
 
 const DonationPage = () => {
 
-  //need to pass in user id and filter by user
+  const {user} = useContext(UserContext);
+  const userId = user.id;
 
-    const [donations, setDonations] = useState([]);
+  const [donations, setDonations] = useState([]);
 
-    useEffect(()=>{
-        getAllDonations().then(response => setDonations(response))
-    },[]);
+  useEffect(()=>{
+      getAllDonations().then(response => setDonations(response))
+  },[]);
 
+  const filteredDonations = donations.filter(filterDonations);
+
+  function filterDonations(donation){
+    if(donation.user_id == userId){
+      return(donation)
+    }
+  }
     
 
     if(donations.length>0){
@@ -21,7 +31,7 @@ const DonationPage = () => {
               <header className="donation-header">
                Welcome to donation page
                
-                    <DonationList donations={donations}/>
+                    <DonationList donations={filteredDonations}/>
               
               </header>
             </div>
