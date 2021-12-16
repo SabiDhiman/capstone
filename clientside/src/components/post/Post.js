@@ -1,5 +1,6 @@
 import "./post.css"
 import DonateButton from "./DonateButton";
+import hubImage from './postImages/hubImage.jpg';
 
 const Post = ({
     id,
@@ -13,7 +14,7 @@ const Post = ({
 }) => {
     return(
         <div className="post-card"> 
-
+        <img src={hubImage} className="hubImage" alt="hub-image"/>
         <p>{hub_name}</p>
         <p>location: {hub_location}</p>
         <p className ="post-body">{post_body}</p>

@@ -23,7 +23,7 @@ const DonateForm = ({id}) => {
         addDonation(newDonation);
     }
 
-
+    
 
     const handleQuantityChange = (event) =>{
         setQuantity(event.target.value);
@@ -36,7 +36,6 @@ const DonateForm = ({id}) => {
         <div className = "form">
         <form onSubmit={handleFormSubmission}>
             <p className="inputTitle"> items to donate: {request.donation_type}</p>
-
             <p className="inputTitle">how many items can you donate?</p>
             <input type="text" value={quantity} onChange={handleQuantityChange}></input>
 

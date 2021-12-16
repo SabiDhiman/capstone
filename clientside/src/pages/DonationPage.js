@@ -15,7 +15,6 @@ const DonationPage = () => {
 
     
 
-
     if(donations.length>0){
         return (
             <div className="donation-page">

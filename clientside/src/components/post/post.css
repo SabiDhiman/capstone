@@ -6,13 +6,23 @@
     text-align: center;
     background-color: #FFD541;
     border-radius: 10px;
-    margin: 20px;
+    margin: 0px; 
     font-family: 'Asap', sans-serif;
     /* text-transform: uppercase; */
     font-size: 14px;
     padding: 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
 }
 
 .post-body{
-    text-align: left;
+    /* text-align: left; */
+}
+
+.hubImage{
+    /* display: flex;
+    justify-content: center; */
+    /* size: 100px 100px;  */
 }
