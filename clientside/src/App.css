@@ -1,4 +1,5 @@
 
+
 /* .App {
   text-align: center;
 }
@@ -7,13 +8,17 @@
   height: 40vmin;
   pointer-events: none;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-* {
+
+{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
+
+  
 }
 
 .home,
@@ -32,19 +37,14 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+*/
+
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 * {
   font-family: 'Lato', sans-serif;
+
 }
 
 body {
@@ -52,3 +52,6 @@ body {
   font-size: 3rem;
   margin: 0;
 }
+
+
+

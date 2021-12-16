@@ -13,14 +13,14 @@ export const SidebarData = [
 
     {
         title: "My Donations",
-        path: "/mydonations",
+        path: "/donationPage",
         icon: <BiIcons.BiDonateHeart /> ,
         cName: "side-text"
     },
 
     {
         title: "Posts",
-        path: "/posts",
+        path: "/",
         icon: <MdIcons.MdOutlineLocalPostOffice /> ,
         cName: "side-text"
     }

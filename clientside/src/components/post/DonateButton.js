@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"
 import './DonateButton.css'
 
 const DonateButton = ({id}) => {
-    
+
     let navigate = useNavigate();
 
     const handleCLick = () =>{
