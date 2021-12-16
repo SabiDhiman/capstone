@@ -28,10 +28,8 @@ const Homepage = () => {
     return (
         <div className="App">
           <header className="App-header">
-           hello world
            
                 <PostList posts={posts}/>
-        
           
           </header>
         </div>

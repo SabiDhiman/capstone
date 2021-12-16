@@ -26,9 +26,9 @@ function App() {
           <BrowserRouter>
             <Sidebar/>
         <Routes>
-          <Route exact path = "/" element={<HomePage />} />
+          <Route exact path = "/homePage" element={<HomePage />} />
           <Route path = "/:id/formPage" element={<FormPage />} />
-          <Route path = "/loginPage" element = {<LoginPage />} />
+          <Route path = "/" element = {<LoginPage />} />
           <Route path = "/donationPage" element = {<DonationPage />} /> 
         </Routes>
         </BrowserRouter>

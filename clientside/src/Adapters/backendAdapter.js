@@ -22,7 +22,7 @@ export const getDonationByUserId = (id) => {
 
 export const addDonation = (donation) => {
     return(
-    axios.post("http://localhost:8080/donations/", donation)
+    axios.post("http://localhost:8080/donations", donation)
     ).catch((e) => {
         console.log("backend adapter could not add donation")
     })

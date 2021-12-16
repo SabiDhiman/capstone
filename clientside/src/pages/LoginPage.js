@@ -33,7 +33,7 @@ if(userInfo.length !== 0) {
   
 login(userInfo[0])
 
-    navigate("/");
+    navigate("/homePage");
 }
 
 
