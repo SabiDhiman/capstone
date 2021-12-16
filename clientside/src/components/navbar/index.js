@@ -31,7 +31,7 @@ const Navbar = () => {
                 </NavLink>
 
             </NavMenu>
-            <NavLink to='/Donation' activeStyle>
+            <NavLink to='/DonationPage' activeStyle>
                 <img src={profile} className="profile-icon" alt="notification-icon"/>
                 </NavLink>
         </Nav>
