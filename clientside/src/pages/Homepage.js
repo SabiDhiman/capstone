@@ -1,7 +1,7 @@
 import PostList from '../components/post/PostList';
 import {useState, useEffect} from "react"
 
-import {getAllPosts, getAllHubs} from "../adapters/backendAdapter"
+import {getAllPosts, getAllHubs} from "../Adapters/backendAdapter"
 import { useNavigate } from 'react-router-dom';
 
 

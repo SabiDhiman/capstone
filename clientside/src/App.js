@@ -1,19 +1,28 @@
 import React from 'react';
 import './App.css';
-import HomePage from "./pages/Homepage";
+
+import Sidebar from './components/sidebar/Sidebar'
+import HomePage from './pages/Homepage'
+import LoginPage from "./pages/LoginPage";
+import  {UserContext}  from "./UserContext";
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+
+
 import FormPage from './pages/FormPage';
 import DonationPage from './pages/DonationPage';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
-import Navbar from './components/navbar';
 
+
+
+
+
+import {useState, useContext} from 'react'
 
 function App() {
+  const {user} = useContext(UserContext)
 
-  return(
-    <BrowserRouter>
-    <Navbar/>
-      <div className="router">
-        <header className="App-header">
+
+  
+  return (
 
           {/* <h1>HomePage</h1> */}
         </header>
@@ -25,9 +34,23 @@ function App() {
           <Route path = "/DonationPage" element = {<DonationPage />} /> 
         </Routes>
 
-      </div>
-    </BrowserRouter>
-  )
+
+    <>
+      <BrowserRouter>
+    <Sidebar/>
+    <Routes>
+      
+   
+   <Route path = "/" element={<HomePage />} />
+         
+          <Route path = "/loginpage" element = {<LoginPage />} />
+         
+          </Routes>
+        </BrowserRouter>
+    
+  
+    </>
+  );
 }
 
 export default App;
