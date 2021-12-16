@@ -1,23 +1,25 @@
 import { getRequestById } from "../../adapters/backendAdapter";
 import { useState } from "react";
 import { addDonation } from "../../adapters/backendAdapter";
+import { UserContext } from '../../UserContext';
+import { useContext } from 'react';
 
-const DonateForm = ({id}) => {
+const DonateForm = ({id},  {item}) => {
 
-    const request = getRequestById(id);
-    const[quantity, setQuantity] = useState(null);
+    //const request = getRequestById(id);
 
-    //the user id below needs to be passed in from context
-    const userId = 1;
+    const[quantity, setQuantity] = useState(0);
+
+    
+    const {user} = useContext(UserContext);
 
 
     const handleFormSubmission = (event) => {
         event.preventDefault();
         const newDonation = {
-            user_id: userId,
+            user_id: user.id,
             donation_quantity: quantity,
-            request_id: id,
-            request: request
+            request_id: id
             
         };   
         addDonation(newDonation);
@@ -35,9 +37,9 @@ const DonateForm = ({id}) => {
         <div className="formContainer">
         <div className = "form">
         <form onSubmit={handleFormSubmission}>
-            <p className="inputTitle"> items to donate: {request.donation_type}</p>
+            <p className="inputTitle"> items to donate: {item}</p>
             <p className="inputTitle">how many items can you donate?</p>
-            <input type="text" value={quantity} onChange={handleQuantityChange}></input>
+            <input type="number" value={quantity} onChange={handleQuantityChange} />
 
             <hr/>
             <input className="submit" type="submit" value="Submit"/>

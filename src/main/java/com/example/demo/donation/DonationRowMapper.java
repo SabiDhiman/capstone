@@ -26,7 +26,7 @@ public class DonationRowMapper implements RowMapper<Donation> {
                 rs.getInt("user_id"),
                 rs.getInt("donation_quantity"),
                 rs.getInt("request_id"),
-                requestDAO.selectRequestById(rs.getInt("id"))
+                requestDAO.selectRequestById(rs.getInt("request_id"))
 
         );
 

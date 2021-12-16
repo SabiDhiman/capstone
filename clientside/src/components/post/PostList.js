@@ -36,7 +36,6 @@ const PostList = ({posts}) => {
     return(
         <div className="post-list">
         {postComponents}
-        <p>hello world: postList</p>
         </div>
     )
 }
