@@ -14,7 +14,7 @@ const FormPage = (props) => {
     return(
         <>
         <p>Hello, welcome to our form page!</p>
-        <p>PLease donate page for request {id}</p>
+        <p>Please donate page for request {id}</p>
         < DonateForm id={id} item ={item}/>
 
         </>

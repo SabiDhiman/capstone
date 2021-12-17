@@ -33,7 +33,7 @@ if(userInfo.length !== 0) {
 
 login(userInfo[0])
 
-    navigate("/");
+    navigate("/homePage");
 }
 
 
@@ -56,11 +56,11 @@ return (
     <input type="email" placeholder="Please enter your email" onChange={(e)=>setFormEmail(e.target.value)} className="form-control"/>
   </div>
 
-
-  <div className = "button-container"> 
+<div className = "button-container">
+  
   <button onClick={async () => handleLoginClick()}>login</button>
-  </div>
-
+ 
+</div>
 
   </div>
 </div>
