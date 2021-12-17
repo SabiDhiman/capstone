@@ -29,8 +29,7 @@ const DonationPage = () => {
         return (
             <div className="donation-page">
               <header className="donation-header">
-               Welcome to your donation page {user.name}!
-               
+               {user.name}'s Donations :D
                     <DonationList donations={filteredDonations}/>
               
               </header>

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { addDonation } from "../../adapters/backendAdapter";
 import { UserContext } from '../../UserContext';
 import { useContext } from 'react';
+import './DonateForm.css'
 
 const DonateForm = ({id},  {item}) => {
 
@@ -34,19 +35,37 @@ const DonateForm = ({id},  {item}) => {
     
 
     return(
-        <div className="formContainer">
-        <div className = "form">
-        <form onSubmit={handleFormSubmission}>
-            <p className="inputTitle"> items to donate: {item}</p>
-            <p className="inputTitle">how many items can you donate?</p>
-            <input type="number" value={quantity} onChange={handleQuantityChange} />
+    <div className="donation-form-page">
 
-            <hr/>
-            <input className="submit" type="submit" value="Submit"/>
-            
-        </form>
+        <div className="main-container">
+
+            <h2>Donation Form</h2>
+
+            <div className = "form-container">
+        
+              
+
+                    <form onSubmit={handleFormSubmission}>
+
+                            <div className="input-title1">
+                            <p className="inputTitle"> items to donate: {item}</p>
+                            </div>
+
+                            <div className="input-title2">
+                            <p className="inputTitle">how many items can you donate?</p>
+                            </div>
+
+                            <div className = "input-container">
+                            <input type="number" value={quantity} onChange={handleQuantityChange} />
+                            </div>
+                    
+                            <div className = "button-container">
+                            <button type="submit" value="Submit">Submit</button>
+                            </div>
+                    </form>
+            </div>
         </div>
-        </div>
+    </div>
 
     )
 }

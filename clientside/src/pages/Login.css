@@ -132,6 +132,7 @@
     border-radius: 2rem;
     cursor: pointer;
     margin: 1rem;
+  
   }
   
   .login-page .button-container {
@@ -146,4 +147,8 @@
   }
   .login-page h1{
     margin: 3rem 0 2rem 0;
+  }
+
+  .login-page button:hover{
+    transform: scale(1.1);
   }
