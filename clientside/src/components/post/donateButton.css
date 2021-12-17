@@ -1,9 +1,16 @@
 
 .donateButton{
-    background-color: rgb(255, 164, 180);
-    border-color: orangered;
-    border-radius:5px;
-    font:2em;
+    background: linear-gradient(to right, #ad8241 0%, #dfa753 79%);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    width: 100%;
+    height: 3rem;
+    border: none;
+    color: white;
+    border-radius: 2rem;
+    cursor: pointer;
+    
+margin-bottom: 50%;
 }
 
 .donateButton:hover{
