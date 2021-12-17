@@ -1,3 +1,5 @@
+
+
 const Donation = ({
     id,
     quantity,
@@ -7,8 +9,8 @@ const Donation = ({
     return(
         <div className="donation">
             <div className="donation-container">
-            <h3>Thank you for donating!</h3>
-            <h3>Quantity: {quantity}</h3>
+            <h1>Thank you for donating!</h1>
+            <h2>Quantity: {quantity}</h2>
             <h3>Items: {type}</h3>
             <br/>
             </div>
