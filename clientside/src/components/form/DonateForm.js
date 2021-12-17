@@ -60,7 +60,7 @@ const DonateForm = ({id},  {item}) => {
                             </div>
                     
                             <div className = "button-container">
-                            <button type="submit" value="Submit">Submit</button>
+                            <button className= "submit-button"type="submit" value="Submit">Submit</button>
                             </div>
                     </form>
             </div>

@@ -135,7 +135,7 @@
    
   }
 
-    button{
+    .submit-button{
     background: linear-gradient(to right, #ad8241 0%, #dfa753 79%);
     text-transform: uppercase;
     letter-spacing: 0.2rem;
@@ -145,7 +145,7 @@
     color: white;
     border-radius: 2rem;
     cursor: pointer;
-    margin: 30rem;
+    margin: 10rem;
 margin-bottom: 50%;
   
   }
